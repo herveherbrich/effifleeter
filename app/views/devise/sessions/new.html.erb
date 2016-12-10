@@ -1,0 +1,32 @@
+<h2>Log in</h2>
+
+<div class="well">
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %> 
+   <fieldset>
+    <legend>Sign in</legend>
+    <div class="form-group">
+    <%= f.label :email, class: "col-lg-2 control-label"%>
+      <div class="col-lg-10">
+    <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+      </div>
+    <br>
+    <br>
+    </div>
+    
+    <div class="form-group">
+    <%= f.label :password, class: "col-lg-2 control-label" %>
+      <div class="col-lg-10">
+    <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+      </div>
+    </div>
+  </fieldset>
+  <br>
+  <div class="actions pull-right">
+    <%= f.submit "Sign in", class: 'btn btn-primary'%>
+  </div>
+  <br>
+  <br>
+  <% end %>
+</form>
+</div>

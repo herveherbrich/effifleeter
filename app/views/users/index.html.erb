@@ -1,0 +1,10 @@
+<h1>Users</h1>
+
+<% @users.each do |user| %>
+	<li><%= user.first_name %></li>
+	<li><%= user.last_name %></li>
+	<li><%= user.company %></li>
+	<%= link_to "User details", admin_user_path %>
+
+  <br>
+<% end %>

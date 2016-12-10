@@ -1,0 +1,39 @@
+<h2>Sign up</h2>
+
+<div class="well">
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %> 
+   <fieldset>
+    <legend>Sign up</legend>
+    <div class="form-group">
+    <%= f.label :email, class: "col-lg-2 control-label"%>
+      <div class="col-lg-10">
+    <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="form-group">
+    <%= f.label :password, class: "col-lg-2 control-label" %>
+      <div class="col-lg-10">
+        <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %>
+    <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+      </div>
+    </div>
+    <div class="form-group">
+    <%= f.label :password_confirmation, class: "col-lg-2 control-label" %>
+      <div class="col-lg-10">
+    <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+      </div>
+    </div>
+  </fieldset>
+  <br>
+  <div class="actions pull-right">
+    <%= f.submit "Sign up", class: 'btn btn-primary'%>
+  </div>
+  <br>
+  <br>
+  <% end %>
+</form>
+</div>
+

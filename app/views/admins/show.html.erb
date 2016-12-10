@@ -1,0 +1,9 @@
+<h2><%= current_admin.email %></h2>
+
+
+<%= link_to 'Cars', user_cars_path(@user), method: :get %>
+
+<%= link_to 'Users', users_path, method: :get %>
+
+<%= link_to 'Appointments', user_appointments_path(@user), method: :get %>
+
