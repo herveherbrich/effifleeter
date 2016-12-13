@@ -43,4 +43,11 @@ class CarsController < ApplicationController
   def car_params
     params.require(:car).permit(:tag, :frame, :brand, :model, :finishing, :numb_places, :color, :registration_date, :discharge_date, :leaving_date, :kms)
   end
+
+  def find_car
+    @car = Car.where(tag: params[:tag]).first
+  end
+
 end
+
+

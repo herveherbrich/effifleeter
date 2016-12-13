@@ -6,5 +6,5 @@ Rails.application.routes.draw do
     resources :cars
     resources :appointments
   end
-
+post "search" => "site#search"
 end

@@ -22,6 +22,7 @@
 body {
 	background-image: image-url("fondo.jpg");
 	background-size: cover;
+	color: #e6e6e6;
 }
 
 .title-web {
@@ -34,9 +35,16 @@ body {
 	width: 60vw;
 }
 
+.title-sections {
+	color: white !important;
+	background: rgba(0, 0, 0, 0.7);
+	width: auto;
+}
+
 .well {
 	padding: 19px 3em;
-	width: 50vw;
+	width: 40vw;
+	background-color: rgba(21, 21, 21, 0.62);
 }
 
 .cars {
@@ -50,4 +58,14 @@ body {
 
 .image-car {
 	width: 30vw;
+}
+
+.button-home .btn-primary {
+	width: 11vw;
+	margin-bottom: 1em;
+}
+
+.button-home {
+	margin: auto;
+	margin-top: 5em;
 }

@@ -1,21 +1,22 @@
 <h1>Car Details</h1>	
 <div class="row">
-<div class="col-md-4">
-	<%= image_tag "clio.jpg", class: 'image-car' %>
+	<div class="col-md-4">
+		<%= image_tag "car.jpg", class: 'image-car' %>
+	</div>
+	<div class="col-md-4 col-md-offset-1">
+		<ul class="list-group cars-show">
+			<li class="list-group-item">Tag : &nbsp;<%= @car.tag %></li>
+			<li class="list-group-item">Frame : &nbsp;<%= @car.frame %></li>
+			<li class="list-group-item">Brand : &nbsp;<%= @car.brand %></li>
+			<li class="list-group-item">Model : &nbsp;<%= @car.model %></li>
+			<li class="list-group-item">Finishing : &nbsp;<%= @car.finishing %></li>
+			<li class="list-group-item">Number of places : &nbsp;<%= @car.numb_places %></li>
+			<li class="list-group-item">Color : &nbsp;<%= @car.color %></li>
+			<li class="list-group-item">Registration date : &nbsp;<%= @car.registration_date.strftime('%d.%m.%Y') %></li>
+			<li class="list-group-item">Discharge date : &nbsp;<%= @car.discharge_date.strftime('%d.%m.%Y') %></li>
+			<li class="list-group-item">Expected leave date : &nbsp;<%= @car.leaving_date.strftime('%d.%m.%Y') %></li>
+			<li class="list-group-item">Kilometers : &nbsp;<%= @car.kms %></li>
+		</ul>
+	</div>
 </div>
-<div class="col-md-4 col-md-offset-1">
-	<ul class="list-group cars-show" >
-		<li class="list-group-item"><%= @car.tag %></li>
-		<li class="list-group-item"><%= @car.frame %></li>
-		<li class="list-group-item"><%= @car.brand %></li>
-		<li class="list-group-item"><%= @car.model %></li>
-		<li class="list-group-item"><%= @car.finishing %></li>
-		<li class="list-group-item"><%= @car.numb_places %></li>
-		<li class="list-group-item"><%= @car.color %></li>
-		<li class="list-group-item"><%= @car.registration_date %></li>
-		<li class="list-group-item"><%= @car.discharge_date %></li>
-		<li class="list-group-item"><%= @car.leaving_date %></li>
-		<li class="list-group-item"><%= @car.kms %></li>
-	</ul>
-</div>
-</div>
+<%= link_to 'Back', :back, class: "btn btn-warning"%>

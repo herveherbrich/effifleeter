@@ -1,9 +1,15 @@
-<h2><%= current_admin.email %></h2>
-
-
-<%= link_to 'Cars', user_cars_path(@user), method: :get %>
-
-<%= link_to 'Users', users_path, method: :get %>
-
-<%= link_to 'Appointments', user_appointments_path(@user), method: :get %>
-
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 text-center">    
+    <div class="button-home">
+      <div class="row">
+        <%= link_to 'Cars', user_cars_path(@user), method: :get, class: "btn btn-primary btn-lg"%>
+      </div>
+      <div class="row">
+        <%= link_to 'Users', users_path, method: :get, class: "btn btn-primary btn-lg"%>
+      </div>
+      <div class="row">
+        <%= link_to 'Appointments', user_appointments_path(@user), method: :get, class: "btn btn-primary btn-lg"%>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,11 +1,18 @@
 class AppointmentsController < ApplicationController
 
   def index
-    appointment = Appointments.all
+    @appointments = Appointment.all
+    @cars = Car.all
+  end
+
+  def new
+    @appointment = Appointment.new
+
   end
 
   def create
-    appointment = Appointment.create
+    @appointment = Appointment.create(appointment_params)
+
   end
 
   def show

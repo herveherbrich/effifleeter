@@ -1,0 +1,44 @@
+<h1>Search Result: <%= @q %></h1>
+<br>
+<br>
+<% if @user.present? %>
+	<br>
+	First name :<%= @user.first_name %>
+	<br>
+	Last name :<%= @user.last_name %>
+	<br>
+	Id card :<%= @user.id_card %>
+	<br>
+	Mobile :<%= @user.mobile %>
+	<br>
+	Email :<%= @user.email %>
+	<br>
+	Company :<%= @user.company %>
+<% elsif @car.present? %>
+	Tag :<%= @car.tag %> 
+	<br>
+	Frame :<%= @car.frame %>
+	<br>
+	Brand :<%= @car.brand %>
+	<br>
+	Model :<%= @car.model %>	
+	<br>
+	Finishing :<%= @car.finishing %>
+	<br>
+	Number of places :<%= @car.numb_places %>	
+	<br>
+	Color :<%= @car.color %>
+	<br>
+	Registration date :<%= @car.registration_date %> 
+	<br>
+	Discharge date<%= @car.discharge_date %>
+	<br>
+	Expected leave date :<%= @car.leaving_date %>
+	<br>
+	Kilometers :<%= @car.kms %>
+<% else %>
+	<h2>Result not found</h2>
+<% end %>
+	<br>
+	<br>
+<%= link_to 'Back', :back, class: "btn btn-warning"%>

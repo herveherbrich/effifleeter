@@ -1,22 +1,23 @@
-<h1>Cars</h1>
-<div class="pull-right">
-<%= link_to "New Car", new_user_car_path(@user), method: :get, class: "btn btn-warning" %>
+<div class="row">
+	<h1 class="text-center"><span class="title-sections">&nbsp;&nbsp;Cars&nbsp;&nbsp;</span></h1>
 </div>
 <div class="row cars">
 	<div class="col-md-6 col-md-offset-3">
 		<ul class="list-group">
 			<% @cars.each do |car| %>
 				<li class="list-group-item"><%= car.tag %>
-				&nbsp; | &nbsp;
-				<%= car.model %>
-				<div class="pull-right">
-					<%= link_to "Car details", user_car_path(@user, car), method: :get, class: "btn btn-primary btn-xs"%>
-					&nbsp;  &nbsp;
-					<%= link_to "Delete Car", user_car_path(@user, car), method: :delete, class: "btn btn-danger btn-xs" %>
-				</div>
+					&nbsp; | &nbsp;
+					<%= car.model %>
+					<div class="pull-right">
+						<%= link_to "Car Details", user_car_path(@user, car), method: :get, class: "btn btn-primary btn-xs"%>
+						&nbsp;  &nbsp;
+						<%= link_to "Delete Car", user_car_path(@user, car), method: :delete, class: "btn btn-danger btn-xs" %>
+					</div>
 				</li>
 				<br>
 			<% end %>
 		</ul>
+		<%= link_to 'Back to Home', admin_path(current_admin), class: "btn btn-warning pull-left"%>
+		<%= link_to "New Car", new_user_car_path(@user), method: :get, class: "btn btn-warning pull-right" %>
 	</div>
 </div>
