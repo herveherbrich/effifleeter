@@ -1,8 +1,53 @@
-<h1>Appointments</h1>
-<%= link_to "Appointments", new_user_appointment_path%>
-	<% @cars.each do |car| %>
- 	<li><%= car.tag %></li>
- 	<li><%= car.brand %></li>
- 	<li><%= car.model %></li>
-  <br>
- <% end %>
+<%= include_gon(:init => true) %>
+<h2 class="text-center"><span class="title-sections">&nbsp;&nbsp;Appointments&nbsp;&nbsp;</span></h2>
+<div id="remote_container"></div>
+<div id="calendar"></div>
+<br>
+<br>
+<%= link_to 'Back to Home', admin_path(current_admin), class: "btn btn-warning pull-left" %>
+&nbsp;
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal" >
+  New Appointment
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">New Appointment</h4>
+      </div>
+			<%= form_for @appointment, method: :post, url: appointments_path do |f| %>
+      	<div class="modal-body">
+			  	<p>
+			  		<%= f.label :user %><br>
+						<%= f.select :user_id, options_for_select(User.all.map{ |c| ["#{c.first_name} #{c.last_name}", c.id] }), class: 'form-control' %>
+			  	</p>
+					<p>
+			  		<%= f.label :car %><br>
+						<%= f.select :car_id, options_for_select(Car.all.map{ |c| [c.tag, c.id] }), class: 'form-control' %>			  	
+					</p>
+				  <p>
+				    <%= f.label :start %><br>
+				    <%= f.datetime_select :start_time, class: 'form-control' %>
+				  </p>
+					<p>
+				    <%= f.label :end %><br>
+				    <%= f.datetime_select :end_time, class: 'form-control' %>
+				  </p>
+
+
+				</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			    <%= f.submit class: "btn btn-primary btn-xs" %>
+      </div>
+			<% end %>      
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<br>

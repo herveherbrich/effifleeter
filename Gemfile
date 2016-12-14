@@ -56,5 +56,8 @@ gem 'pry-rails'
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'bootswatch-rails'
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
 
-
+gem 'gon'
+gem 'rabl-rails'

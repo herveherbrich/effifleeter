@@ -11,6 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
+ *= require fullcalendar
  *= require_self
  */
 
@@ -18,6 +19,11 @@
 @import "bootswatch/cyborg/variables";
 @import "bootstrap";
 @import "bootswatch/cyborg/bootswatch";
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+
+.navbar-brand, .logo {
+	font-family: 'Orbitron', sans-serif;
+}
 
 body {
 	background-image: image-url("fondo.jpg");
@@ -32,7 +38,7 @@ body {
 	padding-bottom: 10px;
 	margin: 0 auto;
 	text-align: center;
-	width: 60vw;
+	width: 40vw;
 }
 
 .title-sections {
@@ -68,4 +74,13 @@ body {
 .button-home {
 	margin: auto;
 	margin-top: 5em;
+}
+
+#calendar table {
+	background-color: rgba(255, 255, 255, 0.47);
+	color: black;
+}
+
+#calendar .fc-title {
+	font-size: 1.5em;
 }
